@@ -1,0 +1,2 @@
+gene,reporter,replicate,fasta,min_rate,candidates
+STK4,AluSq2,rep1,data/AluSq2/STK4-singleAlus-AluSq2-corrected.fa,,"86,105,115,118,209,250,254"

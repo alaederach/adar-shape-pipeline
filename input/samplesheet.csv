@@ -1,0 +1,4 @@
+gene,reporter,sample_type,replicate,fasta,mod_fastq,unt_fastq,library_type,directed_primers_file
+STK4,AluSq2,ADAR-SHAPE,rep1,data/AluSq2/STK4-singleAlus-AluSq2-corrected.fa,data/AluSq2/fastqs/ADAR_SHAPE/rep1/,,targeted-amplicon,data/AluSq2/primers/STK4_AluSq2_primers.txt
+STK4,AluSq2,ADAR-DMSO,rep1,data/AluSq2/STK4-singleAlus-AluSq2-corrected.fa,data/AluSq2/fastqs/ADAR_DMSO/rep1/,,targeted-amplicon,data/AluSq2/primers/STK4_AluSq2_primers.txt
+STK4,AluSq2,standard-SHAPE,rep1,data/AluSq2/STK4-singleAlus-AluSq2-corrected.fa,data/AluSq2/fastqs/MOCK_SHAPE/rep1/,data/AluSq2/fastqs/MOCK_DMSO/rep1/,targeted-amplicon,data/AluSq2/primers/STK4_AluSq2_primers.txt

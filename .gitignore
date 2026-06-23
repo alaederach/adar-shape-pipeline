@@ -1,0 +1,20 @@
+# Demo FASTQs are NOT stored in git — they are hosted (see bin/download_data.sh).
+# Only the data/ folder structure, reference fasta and primers are tracked.
+*.fastq.gz
+*.fq.gz
+
+# Nextflow runtime
+work/
+work*/          # custom -w work dirs (e.g. work_full_s2)
+.nextflow/
+.nextflow.log*
+results/
+results*/       # custom --outdir dirs (e.g. results_300k)
+*.html          # execution reports/timelines
+*.log           # run logs
+
+# OS / editor cruft
+.DS_Store
+
+# Internal development notes (not for the public repo)
+PLAN.md

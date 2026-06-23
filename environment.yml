@@ -1,0 +1,40 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Conda environment for the adar-shape-pipeline (ShapeMapper + sort/deconvolve).
+#
+#   conda env create -f environment.yml      # (or: mamba env create -f ...)
+#   conda activate shape-adar
+#
+# NOTE — ShapeMapper2 is NOT included here. It is not on bioconda and ships only
+# as x86-64 Linux binaries, so it is installed separately:
+#   - native Linux : install ShapeMapper 2.2 and set params.shapemapper_bin to it
+#   - macOS/other  : use `-profile docker` (builds the Dockerfile image; see README)
+#
+# Apple Silicon (arm64) note: several bioconda tools have wider build coverage for
+# osx-64 than osx-arm64. If `conda env create` fails to solve on an M-series Mac,
+# create the env under x86-64 emulation (Rosetta):
+#     CONDA_SUBDIR=osx-64 conda env create -f environment.yml
+#     conda activate shape-adar && conda config --env --set subdir osx-64
+# ─────────────────────────────────────────────────────────────────────────────
+name: shape-adar
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  # ── Workflow engine ───────────────────────────────────────────────────────
+  - nextflow>=25.04,<25.10  # step02.nf/main.nf use constructs removed in NF 26's strict
+                            # parser; this range pins the newest bioconda 25.04.x.
+  - openjdk>=17             # required by Nextflow
+
+  # ── Command-line tools (invoked by modules/*.nf) ──────────────────────────
+  - samtools>=1.19          # BAM sort/index/view/fastq (sam_to_bam, query_sorted_bam,
+                            #   revert_snv, bam_to_fastq)
+
+  # ── Python interpreter + libraries (imported by bin/*.py) ─────────────────
+  - python>=3.10,<3.13
+  - pysam>=0.22             # pysam_revert_snv_with_qc.py, query_sorted_bam.py
+  - numpy                   # profiles, normalize, skyline
+  - pandas
+  - matplotlib-base         # bin/plot_skyline.py
+  - pip

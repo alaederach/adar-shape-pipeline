@@ -1,0 +1,5 @@
+# Demo FASTQs are hosted externally (see bin/download_data.sh), not in git,
+# so no Git LFS is needed. Keep scripts LF on all platforms.
+*.sh   text eol=lf
+*.py   text eol=lf
+*.nf   text eol=lf

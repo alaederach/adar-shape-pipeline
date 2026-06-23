@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Transparent Docker shim for ShapeMapper2 on hosts with no native binary (macOS).
+# params.shapemapper_bin points here; Nextflow calls it exactly like the real
+# `shapemapper` executable. All arguments are forwarded into the container.
+#
+# Why $HOME is mounted: Nextflow stages inputs into the task work dir as symlinks
+# whose targets live elsewhere under $HOME (the Nextflow work/ tree and the FASTQ
+# data dir), and the module passes some absolute work-dir paths. Mounting $HOME at
+# the same path inside the container makes every staged symlink and absolute path
+# resolve, and -w "$PWD" runs in the same task work dir Nextflow chose.
+#
+# Build the image first:  docker build --platform linux/amd64 -t shape-adar/shapemapper:2.2.0 .
+set -euo pipefail
+
+IMAGE="${SHAPEMAPPER_IMAGE:-shape-adar/shapemapper:2.2.0}"
+
+exec docker run --rm --platform linux/amd64 \
+    -v "$HOME":"$HOME" \
+    -w "$PWD" \
+    -u "$(id -u):$(id -g)" \
+    "$IMAGE" shapemapper "$@"
