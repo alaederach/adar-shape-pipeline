@@ -10,16 +10,13 @@ comparable to the bulk SHAPE profile.
 The biological target is Alu elements in gene UTRs; the bundled example is the **STK4
 AluSq2** single-Alu construct.
 
-![SHAPE bulk vs sorted SHAPE-ADAR, with the editing/sorting panel](docs/skyline_demo.png)
-
-*Skyline from the bundled (downsampled) demo. Top: bulk SHAPE (blue) vs deconvolved
-SHAPE-ADAR edited-molecule reactivity (orange). Bottom: ADAR-DMSO editing (red) vs the
-non-ADAR DMSO control (grey), with the sorting cutoff (horizontal line) and the sorted
-positions (vertical lines).*
+Running the demo produces a two-panel **skyline** control plot — bulk SHAPE (blue) vs the
+deconvolved SHAPE-ADAR edited-molecule reactivity (orange), over an ADAR editing / read-sorting
+panel. It's a pipeline output, not a shipped figure.
 
 **New here?** Follow the **[quickstart tutorial](docs/quickstart.md)**
-([PDF](docs/quickstart.pdf)) — it runs the whole pipeline on the demo data and reproduces
-the figure above.
+([PDF](docs/quickstart.pdf), with an example of the expected skyline) — it runs the whole
+pipeline on the demo data end to end.
 
 > ### ⚠️ The bundled data is downsampled
 > The FASTQs shipped with this repo are **downsampled to ~300k read pairs/file** so the

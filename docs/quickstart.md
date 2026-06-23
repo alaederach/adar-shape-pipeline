@@ -85,7 +85,11 @@ Outputs under `results/reactivity_profiles/STK4_AluSq2/minrate15/`:
 
 ## 5. Read the result
 
-![Skyline: bulk SHAPE vs sorted SHAPE-ADAR, with editing/sorting panel](skyline_demo.png)
+Your run writes the skyline to
+`results/reactivity_profiles/STK4_AluSq2/minrate15/STK4_AluSq2_rep1_minrate15_edited_skyline.png`.
+Open it — the two panels show:
+
+<!-- SKYLINE_FIGURE -->
 
 **Top panel** — reactivity: bulk SHAPE (blue) vs the deconvolved SHAPE-ADAR edited-molecule
 reactivity (orange). They track together (same overall fold) and diverge at the positions
