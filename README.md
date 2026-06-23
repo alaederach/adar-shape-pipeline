@@ -17,6 +17,10 @@ SHAPE-ADAR edited-molecule reactivity (orange). Bottom: ADAR-DMSO editing (red) 
 non-ADAR DMSO control (grey), with the sorting cutoff (horizontal line) and the sorted
 positions (vertical lines).*
 
+**New here?** Follow the **[quickstart tutorial](docs/quickstart.md)**
+([PDF](docs/quickstart.pdf)) — it runs the whole pipeline on the demo data and reproduces
+the figure above.
+
 > ### ⚠️ The bundled data is downsampled
 > The FASTQs shipped with this repo are **downsampled to ~300k read pairs/file** so the
 > demo is fast and small. They reproduce the full analysis but are not the complete data.
